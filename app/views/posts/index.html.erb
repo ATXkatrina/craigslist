@@ -1,12 +1,14 @@
-<h1>Hello, Craigslist!</h1><br>
+<h1>Hello, visitors!</h1><br>
 
 <% @posts.each do |post| %>
   <h3><%= post.title %></h3>
   <p><%= post.text %></p>
-  <%= link_to 'View', post_path(post) %> |
-  <%= link_to 'Edit', edit_post_path(post) %>
-  <%= link_to 'Delete', post_path(post),
+  <p>
+    <%= link_to 'View', post_path(post) %>
+    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Delete', post_path(post),
       method: :delete,
-      data: { confirm: 'Are you sure?' } %><br>
+      data: { confirm: 'Are you sure?' } %>
+  </p><br>
 <% end %><br>
-<%= link_to 'New Post', new_post_path %>
+<p><%= link_to 'New Post', new_post_path %></p>
